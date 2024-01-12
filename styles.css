@@ -1,0 +1,237 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F4F4F4;
+}
+
+
+/* header & nav styles */
+header {
+    display: flex;
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    /* padding: 10px; */
+    border-bottom: 2px solid #E2CDC4;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #557571;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    transition: top 0.3s;
+}
+
+header h2 {
+    color: #F2F2F2;
+    margin-left: 30px;
+}
+
+.navlinks {
+    display: flex;
+    height: 69px;
+    width: 400px;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row wrap;
+    padding-right: 20px;
+    list-style-type: none;
+}
+
+.navlinks a {
+    color: #C8D2C9;
+    text-decoration: none;
+
+}
+
+.navlinks a:hover {
+    text-decoration: underline;
+    color: #F4F4F4;
+}
+
+
+/* typing effect styles */
+.container {
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container h2 {
+  font-size: 3rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.container h1 span.typed-text {
+  font-weight: normal;
+  color: #BF8079;
+}
+.container h1 span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.container p span.cursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0%  { background-color: #ccc; }
+  49% { background-color: #ccc; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: #ccc; }
+}
+
+/* summary styles */
+#intro {
+    margin: 2em auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#intro h1 {
+  font-family: 'Cormorant', Georgia, 'Times New Roman', Times, serif;
+  font-size: 60px;
+  display: flex;
+  padding: 25px;
+}
+
+#intro h2 {
+  font-family: 'Cormorant', Georgia, 'Times New Roman', Times, serif;
+  font-size: 35px;
+  display: flex;
+}
+
+#skills h2, #project-header {
+    font-family: 'Cormorant', Georgia, 'Times New Roman', Times, serif;
+    font-size: 35px;
+    display: flex;
+    padding-top: 75px;
+}
+
+#intro p {
+    font-size: 20px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: #BF8079;
+    color:#F2F2F2;
+    padding: 30px;
+
+}
+
+/* image styles */
+.image img {
+    height: 450px;
+    width: 550px;
+    padding: 3px 10px;
+    display: flex;
+}
+
+.imgage h4 {
+    text-align: center;
+    padding-top: 3px;
+}
+
+.projects {
+    display: flex;
+    max-width: 1000px;
+    height: auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 4em auto;
+    flex-flow: column;
+}
+
+#project-header {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+/* skills styles */
+#skills {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    width: 100%;
+    margin: 20px;
+}
+
+
+#skills-header {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+
+#skill-details {
+    display: flex;
+    flex-flow: row;
+    padding-left: 300px;
+    justify-content: space-evenly;
+}
+
+/* Footer styles */
+footer {
+    display: flex;
+    background-color: #557571;
+    color: #F4F4F4;
+    width: 100%;
+    right: 0px;
+    left: 0px;
+}
+
+footer p {
+    margin: 1em 2em;
+}
+
+/* media wueries */
+@media only screen and (max-width: 1048px) {
+    .image img {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media only screen and (max-width: 640px) {
+    header h1, nav, .navlinks {
+      margin-top: 2rem;
+    }
+  
+    #summary {
+      max-height: 200px;
+    }
+  
+    .image img {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    li {
+      display: block;
+      text-align: center;
+    }
+  }
+  
+  @media only screen and (max-width: 320px) {
+    #testimonial h3 {
+      font-size: 2rem;
+    }
+  
+    .image img {
+      width: 100%;
+    }
+  }
+  

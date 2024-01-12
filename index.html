@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mrunal's Portfolio</title>
+        <link rel="stylesheet" href="../Project 27 - Portfolio Website/styles.css">
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;1,400;1,600&family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    
+        <!-- font awesome -->
+        <script src="https://kit.fontawesome.com/34f3541e3f.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <!-- header -->
+        <header>
+           <h2>Welcome!</h2>
+
+            <!--navigation-->
+            <nav>
+                <ul class="navlinks">
+                    <li><h4><a href="#intro">About Me</a></h4></li>
+                    <li><h4><a href="#project-header">Projects</a></h4></li>
+                    <li><h4><a href="#skills">Skills</a></h4></li>
+            </nav>
+        </header>
+
+
+        <!-- summary div -->
+        <div id="intro">
+            <div class="container">
+                <h1>Aspiring...<span class="typed-text"></span><span class="cursor">&nbsp;</span></h1>
+            </div>
+            <p>Hello! I'm glad you stopped by! My name is Mrunal. I'm currently reacquinting myself with HTML, CSS, and Javascript while learning new skills such as jQuery, React, Figma, git, GitHub, and Node. Below are a few of the projects I've completed while working my way through Codecademy's Front-End Engineering track.</p>
+        </div>
+
+        <!-- projects div -->
+        <div class="projects">
+            <h2 id="project-header">Projects</h2>
+            <div class="image">
+            <img src="../Project 27 - Portfolio Website/resources/colmaracademy.png" alt="Colmar Academy">
+                <h4>Capstone: Colmar Academy</h4>
+            </div>
+
+            <div class="image">
+                <img src="../Project 27 - Portfolio Website/resources/fotomatic.png" alt="Fotomatic">
+                <h4>Project Name: Fotomatic</h4>
+            </div>
+
+            <div class="image">
+                <img src="../Project 27 - Portfolio Website/resources/teacozy.png" alt="Tea Cozy">
+                <h4>Project: Tea Cozy</h4>
+            </div>
+
+            <div class="image">
+                <img src="../Project 27 - Portfolio Website/resources/mockstyleguide.png" alt="Mock Style Guide">
+                <h4>Project: Mock Style Guide</h4>
+            </div>
+
+            <div class="image">
+                <img src="../Project 27 - Portfolio Website/resources/photographyclub.png" alt="Photography Club">
+                <h4>Photography Club</h4>
+            </div>
+        </div>
+
+        <!-- meeting date & time div-->
+        <div id="skills">
+            <h2 id="skills-header">Skills</h2>
+            <div id="skills-details">
+                <i class="fab fa-html5 fa-fw fa-lg"></i>
+                <i class="fab fa-css3-alt fa-fw fa-lg"></i>
+                <i class="fab fa-js fa-fw fa-lg"></i>
+                <i class="fab fa-chrome fa-fw fa-lg"></i>
+                <i class="fas fa-terminal fa-fw fa-lg"></i>
+                <i class="fab fa-node fa-fw fa-lg"></i>
+                <i class="fab fa-github fa-fw fa-lg"></i>
+                <i class="fab fa-react fa-fw fa-lg"></i>
+                <i class="fab fa-figma fw-fw fa-lg"></i>
+                <i class="fab fa-git fw-fw fa-lg"></i>
+
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer>
+            <footer>Made with <span class="heart">♥</span>.</footer>
+        </footer>
+
+    <!-- Javascript -->
+    <script>
+        // Typewriter Effect Javascript
+        const typedTextSpan = document.querySelector(".typed-text");
+        const cursorSpan = document.querySelector(".cursor");
+
+        const textArray = [" Web Developer", " UX/UI Designer", " Front-End Engineer"];
+        const typingDelay = 200;
+        const erasingDelay = 100;
+        const newTextDelay = 2000; // Delay between current and next text
+        let textArrayIndex = 0;
+        let charIndex = 0;
+
+        function type() {
+        if (charIndex < textArray[textArrayIndex].length) {
+            if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+            typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, typingDelay);
+        } 
+        else {
+            cursorSpan.classList.remove("typing");
+            setTimeout(erase, newTextDelay);
+        }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+            if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+            typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+            charIndex--;
+            setTimeout(erase, erasingDelay);
+        } 
+        else {
+            cursorSpan.classList.remove("typing");
+            textArrayIndex++;
+            if(textArrayIndex>=textArray.length) textArrayIndex=0;
+            setTimeout(type, typingDelay + 1100);
+        }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+        if(textArray.length) setTimeout(type, newTextDelay + 250);
+        });
+
+        // When the user scrolls down 20px from the top of the document, slide down the navbar
+        // When the user scrolls to the top of the page, slide up the navbar (50px out of the top view)
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("header").style.top = "0";
+        } else {
+            document.getElementById("header").style.top = "-50px";
+        }
+        }
+    </script>
+
+    </body>
+</html>
